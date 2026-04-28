@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 40% 99%;
+    --foreground: 230 45% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 45% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 45% 12%;
+
+    /* Brand: Nexora deep indigo + electric blue + teal accent */
+    --primary: 232 60% 28%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 220 95% 62%;
+
+    --secondary: 220 60% 96%;
+    --secondary-foreground: 232 60% 28%;
+
+    --muted: 220 30% 95%;
+    --muted-foreground: 230 15% 42%;
+
+    --accent: 185 75% 50%;
+    --accent-foreground: 232 60% 18%;
+
+    --brand-violet: 258 70% 60%;
+    --brand-blue: 220 95% 62%;
+    --brand-teal: 185 75% 50%;
+    --brand-deep: 240 55% 22%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 25% 90%;
+    --input: 220 25% 90%;
+    --ring: 220 95% 62%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(232 60% 28%) 0%, hsl(220 95% 62%) 50%, hsl(185 75% 50%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(220 100% 98%) 0%, hsl(220 80% 96%) 50%, hsl(185 70% 96%) 100%);
+    --gradient-hero: radial-gradient(1200px 600px at 10% 0%, hsl(220 95% 62% / 0.18), transparent 60%),
+                     radial-gradient(1000px 500px at 90% 10%, hsl(185 75% 50% / 0.18), transparent 60%),
+                     radial-gradient(900px 600px at 50% 100%, hsl(258 70% 60% / 0.15), transparent 60%),
+                     linear-gradient(180deg, hsl(220 40% 99%), hsl(220 50% 97%));
+    --gradient-button: linear-gradient(135deg, hsl(220 95% 62%), hsl(258 70% 60%));
+    --gradient-text: linear-gradient(135deg, hsl(232 60% 28%), hsl(220 95% 55%), hsl(185 75% 45%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -6px hsl(232 60% 28% / 0.08);
+    --shadow-card: 0 10px 40px -12px hsl(232 60% 28% / 0.12);
+    --shadow-elegant: 0 20px 60px -20px hsl(220 95% 62% / 0.35);
+    --shadow-glow: 0 0 40px hsl(220 95% 62% / 0.35);
+
+    --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark {
+    --background: 232 45% 8%;
+    --foreground: 210 40% 98%;
+    --card: 232 40% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 232 40% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 220 95% 62%;
+    --primary-foreground: 232 60% 14%;
+    --secondary: 232 30% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 232 30% 18%;
+    --muted-foreground: 220 15% 70%;
+    --accent: 185 75% 50%;
+    --accent-foreground: 232 60% 14%;
+    --border: 232 30% 22%;
+    --input: 232 30% 22%;
+    --ring: 220 95% 62%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    @apply tracking-tight;
+  }
+  html { scroll-behavior: smooth; }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-bg { background: var(--gradient-primary); }
+  .gradient-soft-bg { background: var(--gradient-soft); }
+  .gradient-hero-bg { background: var(--gradient-hero); }
+  .gradient-button-bg { background: var(--gradient-button); }
+
+  .glass {
+    background: hsl(0 0% 100% / 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(220 50% 90% / 0.6);
+  }
+  .glass-dark {
+    background: hsl(232 50% 14% / 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(220 50% 90% / 0.15);
+  }
+
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+
+  .hover-lift {
+    transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
+  }
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .gradient-border {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .gradient-border:hover::before { opacity: 1; }
+
+  .marquee {
+    display: flex;
+    animation: marquee 30s linear infinite;
+  }
+
+  .floating { animation: floating 6s ease-in-out infinite; }
+  .floating-delayed { animation: floating 8s ease-in-out infinite; animation-delay: -2s; }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes floating {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes draw-line {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--primary-glow) / 0.4); }
+  50% { box-shadow: 0 0 40px hsl(var(--primary-glow) / 0.7); }
+}
