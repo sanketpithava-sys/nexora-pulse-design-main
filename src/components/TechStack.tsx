@@ -138,7 +138,7 @@ const TechStack = () => {
           <div className="overflow-hidden py-6">
             <div
               key={active}
-              className="flex gap-6 w-max marquee"
+              className="marquee animate-marquee gap-6 w-max"
               style={{ animationDuration: "35s" }}
             >
               {loop.map((tech, i) => {

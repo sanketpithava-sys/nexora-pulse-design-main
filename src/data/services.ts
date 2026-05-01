@@ -1,6 +1,7 @@
 import {
   Code2, Cloud, Palette, Cpu, Database,
   Globe, Shield, Smartphone, Sparkles, Workflow, LucideIcon,
+  Megaphone,
 } from "lucide-react";
 
 export type Service = {
@@ -124,6 +125,28 @@ export const services: Service[] = [
       { step: "04", title: "Evolve", description: "Iterate as your business grows." },
     ],
     technologies: ["SAP", "Odoo", "Oracle", "Microsoft Dynamics", "NetSuite", "Zoho"],
+  },
+  {
+    slug: "digital-marketing",
+    title: "Digital Marketing",
+    short: "Data-driven strategies that amplify your brand reach.",
+    description:
+      "We combine performance marketing, content strategy, and SEO to help your brand connect with the right audience and drive conversions.",
+    icon: Megaphone,
+    features: [
+      "Search Engine Optimization (SEO)",
+      "Social Media Management",
+      "Pay-Per-Click (PPC) Advertising",
+      "Content Strategy & Marketing",
+      "Analytics & Conversion Tracking",
+    ],
+    process: [
+      { step: "01", title: "Strategy", description: "Define goals, audience and campaign roadmap." },
+      { step: "02", title: "Execute", description: "Launch campaigns across multiple channels." },
+      { step: "03", title: "Analyze", description: "Track performance and gather insights." },
+      { step: "04", title: "Optimize", description: "Refine tactics for maximum ROI." },
+    ],
+    technologies: ["Google Ads", "Meta Ads", "HubSpot", "Google Analytics", "SEMrush", "Mailchimp"],
   },
 ];
 

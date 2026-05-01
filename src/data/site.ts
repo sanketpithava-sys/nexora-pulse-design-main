@@ -26,25 +26,27 @@ export const technologies = [
 ];
 
 export const team = [
-  { name: "Maya Chen", role: "Founder & CEO", bio: "10+ years building digital products at scale.", initials: "MC" },
-  { name: "Diego Alvarez", role: "CTO", bio: "Cloud architect and distributed systems nerd.", initials: "DA" },
-  { name: "Priya Raman", role: "Head of Design", bio: "Designs that turn users into fans.", initials: "PR" },
-  { name: "Liam O'Connor", role: "Engineering Lead", bio: "TypeScript everywhere, tests for everything.", initials: "LO" },
-  { name: "Sara Lindqvist", role: "ERP Practice Lead", bio: "Streamlines ops for global enterprises.", initials: "SL" },
-  { name: "Noah Kim", role: "Performance Engineer", bio: "Obsessed with milliseconds and joy.", initials: "NK" },
+  { name: "Sanket Pithava", role: "Founder & CEO", bio: "Leading Nexora with a vision to build world-class digital products and high-performance software solutions.", initials: "SP" },
 ];
 
 export const testimonials = [
-  { name: "Hannah Weiss", role: "VP Product, Aurora Inc.", quote: "Nexora rebuilt our analytics platform in 12 weeks and we shipped faster than we ever had before. They felt like part of the team." },
-  { name: "Marcus Tan", role: "CTO, Helio Bank", quote: "The mobile experience they delivered is world-class. Conversion is up, churn is down — and our users keep telling us how much they love it." },
+  { name: "Rahul Dixit", role: "Performance & Growth Marketer, Luxbury Properties", quote: "Nexora played a key role in building our website for Luxbury Properties, and the outcome speaks for itself. From design to execution, they understood exactly what we needed — a clean, premium, and conversion-focused website. They are quick, reliable, and extremely easy to work with." },
+  { name: "Meet Mistry", role: "Founder, Meet Nexus", quote: "We recently worked with Nexora for our website, and it was a smooth experience overall. They understood our requirements well and delivered a clean, professional site that’s easy to use. Communication was clear and timelines were followed." },
+  { name: "Uttam Sakhiya", role: "Co-Founder, Radha Laboratory", quote: "We got our laboratory website developed by Nexora, and the experience was very smooth. They understood our requirements clearly and created a clean, well-structured website that presents our services professionally." },
+  { name: "Yash Mangroliya", role: "Co-Founder, Dotted Clothing Brand", quote: "We worked with Nexora for our clothing brand website, and the experience was great. They understood our vision and delivered a clean, modern website that really reflects our brand. The design looks premium and everything runs smoothly." },
   { name: "Elena Rossi", role: "COO, Northwind Group", quote: "A flawless ERP rollout across 14 countries. Their planning and change management made all the difference." },
+  { name: "Sarah Jenkins", role: "Founder, Bloom AI", quote: "Working with Nexora was a game-changer. Their technical depth and design intuition are unmatched in the industry." },
+  { name: "David Chen", role: "Head of Tech, Skyscale", quote: "They didn't just build what we asked for; they built what we needed. Their insight into user experience is profound." },
+  { name: "Amara Okafor", role: "Digital Director, Zenith", quote: "The most professional agency we've worked with. Transparent, fast, and remarkably talented." },
+  { name: "Julian Voss", role: "Lead Engineer, Quantum", quote: "Their code quality is exceptional. It's rare to find a studio that cares as much about the backend as the frontend." },
+  { name: "Sofia Mendez", role: "Product Manager, Verve", quote: "Nexora delivered a complex cloud migration ahead of schedule. Their team is simply the best in the business." },
 ];
 
-export const clients = ["Aurora", "Helio", "Skylane", "Marlow", "Northwind", "Lumen", "Vertex", "Orbital", "Quanta", "Nimbus"];
+export const clients = ["Helix Service", "Pronto", "Luxbury Properties", "arkstone Reality", "Meet Nexus"];
 
 export const stats = [
-  { value: 220, suffix: "+", label: "Projects delivered" },
-  { value: 48, suffix: "", label: "Enterprise clients" },
-  { value: 14, suffix: "", label: "Countries served" },
+  { value: 22, suffix: "+", label: "Projects delivered" },
+  { value: 12, suffix: "", label: "Enterprise clients" },
+  { value: 3, suffix: "", label: "Countries served" },
   { value: 99, suffix: "%", label: "Client retention" },
 ];

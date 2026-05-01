@@ -4,12 +4,12 @@ import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import CTASection from "@/components/CTASection";
-import { portfolio, portfolioCategories } from "@/data/portfolio";
+import { portfolio, portfolioCategories, type Project } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("All");
-  const [selected, setSelected] = useState<typeof portfolio[number] | null>(null);
+  const [selected, setSelected] = useState<Project | null>(null);
   const items = filter === "All" ? portfolio : portfolio.filter(p => p.category === filter);
 
   return (
@@ -65,25 +65,54 @@ const Portfolio = () => {
           onClick={() => setSelected(null)}
         >
           <div
-            className="relative bg-card rounded-3xl shadow-elegant max-w-3xl w-full overflow-hidden animate-scale-in"
+            className="relative bg-card rounded-3xl shadow-elegant max-w-3xl w-full max-h-[90vh] flex flex-col animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 h-9 w-9 rounded-full glass flex items-center justify-center hover:bg-secondary z-10"
+              className="absolute top-4 right-4 h-9 w-9 rounded-full glass flex items-center justify-center hover:bg-secondary z-50 shadow-soft"
               aria-label="Close"
             >
               <X className="h-4 w-4" />
             </button>
-            <img src={selected.image} alt={selected.title} className="w-full aspect-video object-cover" />
-            <div className="p-8">
-              <span className="text-xs uppercase tracking-[0.18em] text-primary font-semibold">{selected.category} · {selected.client}</span>
-              <h3 className="font-display text-3xl font-bold mt-2">{selected.title}</h3>
-              <p className="text-muted-foreground mt-4 leading-relaxed">{selected.description}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {selected.tags.map(t => (
-                  <span key={t} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{t}</span>
-                ))}
+            
+            <div className="overflow-y-auto w-full custom-scrollbar">
+              <img src={selected.image} alt={selected.title} className="w-full aspect-video object-cover" />
+              <div className="p-8">
+                <span className="text-xs uppercase tracking-[0.18em] text-primary font-semibold">{selected.category} · {selected.client}</span>
+                <h3 className="font-display text-3xl font-bold mt-2">{selected.title}</h3>
+                
+                <div className="mt-8 space-y-8">
+                  <div>
+                    <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">Overview</h4>
+                    <p className="text-muted-foreground leading-relaxed">{selected.fullDescription || selected.description}</p>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">The Challenge</h4>
+                      <p className="text-muted-foreground leading-relaxed">{selected.challenge}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">The Solution</h4>
+                      <p className="text-muted-foreground leading-relaxed">{selected.solution}</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-secondary/30 p-6 rounded-2xl border border-border/50">
+                    <h4 className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Key Results</h4>
+                    <p className="text-foreground font-medium italic">"{selected.results}"</p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">Technologies</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selected.tags.map(t => (
+                        <span key={t} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -73,9 +73,9 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-base mb-4">Get in touch</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex gap-3"><MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" /> 221B Innovation Ave, Tech City</li>
-              <li className="flex gap-3"><Mail className="h-4 w-4 mt-0.5 text-primary shrink-0" /> hello@nexora.studio</li>
-              <li className="flex gap-3"><Phone className="h-4 w-4 mt-0.5 text-primary shrink-0" /> +1 (555) 010-2024</li>
+              <li className="flex gap-3"><MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" /> Ahmedabad, Gujarat, India</li>
+              <li className="flex gap-3"><Mail className="h-4 w-4 mt-0.5 text-primary shrink-0" /> inboxnexxora@gmail.com</li>
+              <li className="flex gap-3"><Phone className="h-4 w-4 mt-0.5 text-primary shrink-0" /> +91-8320541447</li>
             </ul>
           </div>
         </div>

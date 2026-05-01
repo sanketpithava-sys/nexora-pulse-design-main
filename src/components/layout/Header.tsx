@@ -46,13 +46,10 @@ const Header = () => {
             scrolled ? "glass shadow-card" : "bg-transparent"
           )}
         >
-          <Link to="/" className="flex items-center gap-3 group py-1">
-            <div className="flex items-center justify-center h-8 md:h-10 shrink-0 group-hover:scale-105 transition-transform">
-              <img src={logo} alt="Nexora logo" className="h-full w-auto object-contain" />
-            </div>
+          <Link to="/" className="flex items-center gap-2 group py-1">
             <div className="flex flex-col leading-none">
-              <span className="font-display font-bold text-lg tracking-tight gradient-text">NEXORA</span>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Innovation Studio</span>
+              <span className="font-display font-bold text-xl md:text-2xl tracking-tighter gradient-text">NEXORA</span>
+              <span className="text-[8px] uppercase tracking-[0.3em] text-muted-foreground font-semibold">Innovation Studio</span>
             </div>
           </Link>
 
@@ -69,8 +66,10 @@ const Header = () => {
                     to={link.to}
                     className={({ isActive }) =>
                       cn(
-                        "flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
-                        isActive ? "text-primary" : "text-foreground/80 hover:text-primary"
+                        "flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all relative",
+                        isActive 
+                          ? "text-primary after:absolute after:bottom-0 after:left-4 after:right-8 after:h-0.5 after:bg-primary after:rounded-full" 
+                          : "text-foreground/80 hover:text-primary"
                       )
                     }
                   >
@@ -79,7 +78,7 @@ const Header = () => {
                   </NavLink>
                   {servicesOpen && (
                     <div className="absolute top-full left-0 pt-3 w-72 animate-fade-in">
-                      <div className="glass shadow-elegant rounded-2xl p-2">
+                      <div className="bg-white shadow-card rounded-2xl p-2 border border-border">
                         {services.map((s) => (
                           <Link
                             key={s.slug}
@@ -106,8 +105,10 @@ const Header = () => {
                   end={link.to === "/"}
                   className={({ isActive }) =>
                     cn(
-                      "px-4 py-2 rounded-lg text-sm font-medium transition-colors relative",
-                      isActive ? "text-primary" : "text-foreground/80 hover:text-primary"
+                      "px-4 py-2 rounded-lg text-sm font-medium transition-all relative",
+                      isActive 
+                        ? "text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:rounded-full" 
+                        : "text-foreground/80 hover:text-primary"
                     )
                   }
                 >
@@ -119,7 +120,7 @@ const Header = () => {
 
           <div className="hidden lg:block">
             <Button asChild variant="hero" size="sm">
-              <Link to="/contact">Get in touch</Link>
+              <Link to="/contact">Start a project</Link>
             </Button>
           </div>
 
@@ -142,8 +143,8 @@ const Header = () => {
                   end={link.to === "/"}
                   className={({ isActive }) =>
                     cn(
-                      "px-4 py-3 rounded-xl text-sm font-medium",
-                      isActive ? "bg-secondary text-primary" : "text-foreground/80"
+                      "px-4 py-3 rounded-xl text-sm font-medium transition-all flex items-center justify-between",
+                      isActive ? "bg-secondary text-primary font-bold border-l-4 border-primary" : "text-foreground/80"
                     )
                   }
                 >
@@ -162,7 +163,7 @@ const Header = () => {
                 ))}
               </div>
               <Button asChild variant="hero" className="mt-3">
-                <Link to="/contact">Get in touch</Link>
+                <Link to="/contact">Start a project</Link>
               </Button>
             </div>
           </div>

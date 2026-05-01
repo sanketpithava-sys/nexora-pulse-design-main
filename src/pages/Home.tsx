@@ -12,12 +12,8 @@ import { clients, stats, testimonials } from "@/data/site";
 import { portfolio } from "@/data/portfolio";
 import logo from "@/assets/nexora-logo.jpeg";
 import aboutImg from "@/assets/about-team.jpg";
-import { useState } from "react";
 
 const Home = () => {
-  const [testimonialIdx, setTestimonialIdx] = useState(0);
-  const t = testimonials[testimonialIdx];
-
   return (
     <Layout>
       {/* Hero */}
@@ -58,15 +54,15 @@ const Home = () => {
               <Reveal delay={320}>
                 <div className="mt-10 flex items-center gap-6">
                   <div className="flex -space-x-2">
-                    {["from-brand-blue to-brand-violet","from-brand-violet to-accent","from-accent to-brand-blue","from-primary to-brand-blue"].map((g,i)=>(
+                    {["from-brand-blue to-brand-violet", "from-brand-violet to-accent", "from-accent to-brand-blue", "from-primary to-brand-blue"].map((g, i) => (
                       <div key={i} className={`h-10 w-10 rounded-full bg-gradient-to-br ${g} ring-2 ring-background`} />
                     ))}
                   </div>
                   <div>
                     <div className="flex items-center gap-1 text-accent">
-                      {[...Array(5)].map((_,i)=>(<Star key={i} className="h-4 w-4 fill-current" />))}
+                      {[...Array(5)].map((_, i) => (<Star key={i} className="h-4 w-4 fill-current" />))}
                     </div>
-                    <p className="text-xs text-muted-foreground mt-1">Trusted by 220+ teams worldwide</p>
+                    <p className="text-xs text-muted-foreground mt-1">Trusted by 22+ teams worldwide</p>
                   </div>
                 </div>
               </Reveal>
@@ -104,11 +100,11 @@ const Home = () => {
                 </div>
                 <div className="absolute bottom-4 right-2 md:right-0 glass rounded-2xl p-4 shadow-card floating-delayed z-20">
                   <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Projects</div>
-                  <div className="font-display font-bold text-2xl gradient-text">220+</div>
+                  <div className="font-display font-bold text-2xl gradient-text">22+</div>
                 </div>
                 <div className="hidden md:block absolute top-1/2 -right-2 glass rounded-2xl px-4 py-3 shadow-card floating z-20" style={{ animationDelay: "-3s" }}>
                   <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Clients</div>
-                  <div className="font-display font-bold text-xl gradient-text">48+</div>
+                  <div className="font-display font-bold text-xl gradient-text">12+</div>
                 </div>
               </div>
             </Reveal>
@@ -120,7 +116,7 @@ const Home = () => {
       <section className="py-12 border-y border-border bg-secondary/40 overflow-hidden">
         <p className="text-center text-xs uppercase tracking-[0.18em] text-muted-foreground mb-6">Trusted by industry leaders</p>
         <div className="relative">
-          <div className="marquee gap-16 whitespace-nowrap">
+          <div className="marquee animate-marquee gap-16">
             {[...clients, ...clients].map((c, i) => (
               <span key={i} className="font-display text-2xl md:text-3xl font-semibold text-muted-foreground/60 hover:text-primary transition-colors">
                 {c}
@@ -166,7 +162,7 @@ const Home = () => {
               <div className="absolute -inset-4 gradient-bg rounded-3xl blur-2xl opacity-20" />
               <img src={aboutImg} alt="Nexora team collaborating" className="relative rounded-3xl shadow-elegant w-full" loading="lazy" width={1280} height={960} />
               <div className="absolute -bottom-6 -right-6 glass rounded-2xl p-5 shadow-card max-w-[200px]">
-                <div className="text-3xl font-display font-bold gradient-text"><Counter end={12} suffix="+" /></div>
+                <div className="text-3xl font-display font-bold gradient-text"><Counter end={1} suffix="+" /></div>
                 <div className="text-xs text-muted-foreground mt-1">years of crafting digital products</div>
               </div>
             </div>
@@ -174,10 +170,10 @@ const Home = () => {
           <div>
             <Reveal><span className="text-xs uppercase tracking-[0.18em] text-primary font-semibold">About Nexora</span></Reveal>
             <Reveal delay={80}><h2 className="font-display text-4xl md:text-5xl font-bold mt-3">A team that ships <span className="gradient-text">remarkable</span> products</h2></Reveal>
-            <Reveal delay={160}><p className="text-muted-foreground mt-5 leading-relaxed">We're 60+ designers, engineers and strategists obsessed with the craft of building software. We partner with founders, scale-ups and enterprises to design, build and scale the products that matter.</p></Reveal>
+            <Reveal delay={160}><p className="text-muted-foreground mt-5 leading-relaxed">We're 10+ designers, engineers and strategists obsessed with the craft of building software. We partner with founders, scale-ups and enterprises to design, build and scale the products that matter.</p></Reveal>
             <div className="grid grid-cols-2 gap-6 mt-8">
-              {stats.slice(0,4).map((s,i)=>(
-                <Reveal key={s.label} delay={200 + i*80}>
+              {stats.slice(0, 4).map((s, i) => (
+                <Reveal key={s.label} delay={200 + i * 80}>
                   <div className="glass rounded-2xl p-5 shadow-soft">
                     <div className="font-display text-3xl font-bold gradient-text"><Counter end={s.value} suffix={s.suffix} /></div>
                     <div className="text-xs text-muted-foreground mt-1">{s.label}</div>
@@ -206,8 +202,8 @@ const Home = () => {
           </Reveal>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolio.slice(0,6).map((p,i)=>(
-            <Reveal key={p.id} delay={i*60}>
+          {portfolio.slice(0, 6).map((p, i) => (
+            <Reveal key={p.id} delay={i * 60}>
               <Link to="/portfolio" className="group relative block aspect-[4/3] rounded-3xl overflow-hidden shadow-card">
                 <img src={p.image} alt={p.title} className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -227,33 +223,73 @@ const Home = () => {
       {/* Technologies */}
       <TechStack />
 
-      {/* Testimonials */}
-      <section className="container py-24">
-        <div className="max-w-3xl mx-auto">
-          <Reveal>
-            <div className="glass rounded-3xl p-8 md:p-12 shadow-elegant text-center relative overflow-hidden">
-              <Quote className="absolute top-6 left-6 h-10 w-10 text-primary/15" />
-              <Quote className="absolute bottom-6 right-6 h-10 w-10 text-primary/15 rotate-180" />
-              <div className="flex items-center justify-center gap-1 text-accent mb-6">
-                {[...Array(5)].map((_,i)=>(<Star key={i} className="h-4 w-4 fill-current" />))}
-              </div>
-              <p className="font-display text-xl md:text-2xl leading-relaxed">"{t.quote}"</p>
-              <div className="mt-6">
-                <div className="font-semibold">{t.name}</div>
-                <div className="text-sm text-muted-foreground">{t.role}</div>
-              </div>
-              <div className="flex justify-center gap-2 mt-8">
-                {testimonials.map((_,i)=>(
-                  <button
-                    key={i}
-                    onClick={()=>setTestimonialIdx(i)}
-                    aria-label={`Testimonial ${i+1}`}
-                    className={`h-2 rounded-full transition-all ${i===testimonialIdx ? "w-8 gradient-button-bg" : "w-2 bg-border"}`}
-                  />
-                ))}
-              </div>
+      {/* Testimonials Marquee */}
+      <section className="py-24 overflow-hidden relative">
+        <div className="container mb-12 text-center">
+          <Reveal><span className="text-xs uppercase tracking-[0.18em] text-primary font-semibold">Kind words from our partners</span></Reveal>
+          <Reveal delay={80}><h2 className="font-display text-4xl md:text-5xl font-bold mt-3">Trusted by teams <span className="gradient-text">worldwide</span></h2></Reveal>
+        </div>
+
+        <div className="relative flex flex-col gap-8">
+          {/* First Row: Scrolling Right to Left */}
+          <div className="flex marquee-container overflow-hidden">
+            <div className="marquee animate-marquee gap-6">
+              {[...testimonials, ...testimonials].map((t, i) => (
+                <div
+                  key={i}
+                  className="w-[350px] md:w-[450px] glass rounded-[2rem] p-8 shadow-card flex flex-col justify-between border border-primary/5 hover:border-primary/20 transition-colors group shrink-0"
+                >
+                  <div className="flex items-center gap-1 text-accent mb-6">
+                    {[...Array(5)].map((_, i) => (<Star key={i} className="h-3.5 w-3.5 fill-current" />))}
+                  </div>
+                  <p className="text-base md:text-lg text-foreground/90 leading-relaxed italic whitespace-normal">
+                    "{t.quote}"
+                  </p>
+                  <div className="mt-8 flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center font-display font-bold text-primary text-xs ring-1 ring-primary/10">
+                      {t.name.split(" ").map(n => n[0]).join("")}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">{t.name}</div>
+                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{t.role}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          </Reveal>
+          </div>
+
+          {/* Second Row: Scrolling Left to Right (Reverse) */}
+          <div className="flex marquee-container overflow-hidden">
+            <div className="marquee animate-marquee-reverse gap-6">
+              {[...testimonials.slice().reverse(), ...testimonials.slice().reverse()].map((t, i) => (
+                <div
+                  key={i}
+                  className="w-[350px] md:w-[450px] glass rounded-[2rem] p-8 shadow-card flex flex-col justify-between border border-primary/5 hover:border-primary/20 transition-colors group shrink-0"
+                >
+                  <div className="flex items-center gap-1 text-accent mb-6">
+                    {[...Array(5)].map((_, i) => (<Star key={i} className="h-3.5 w-3.5 fill-current" />))}
+                  </div>
+                  <p className="text-base md:text-lg text-foreground/90 leading-relaxed italic whitespace-normal">
+                    "{t.quote}"
+                  </p>
+                  <div className="mt-8 flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center font-display font-bold text-primary text-xs ring-1 ring-primary/10">
+                      {t.name.split(" ").map(n => n[0]).join("")}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">{t.name}</div>
+                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{t.role}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Gradient Overlays for smooth edges */}
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         </div>
       </section>
 

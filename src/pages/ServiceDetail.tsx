@@ -19,7 +19,7 @@ const ServiceDetail = () => {
         title={<><span className="gradient-text">{service.title}</span></>}
         subtitle={service.description}
       >
-        <Button asChild variant="hero" size="lg"><Link to="/contact">Discuss your project <ArrowRight className="h-4 w-4" /></Link></Button>
+        <Button asChild variant="hero" size="lg"><Link to="/contact">Start a project <ArrowRight className="h-4 w-4" /></Link></Button>
         <Button asChild variant="glass" size="lg"><Link to="/services">All services</Link></Button>
       </PageHero>
 
