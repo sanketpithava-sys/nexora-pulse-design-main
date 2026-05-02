@@ -237,7 +237,7 @@ const Home = () => {
               {[...testimonials, ...testimonials].map((t, i) => (
                 <div
                   key={i}
-                  className="w-[350px] md:w-[450px] glass rounded-[2rem] p-8 shadow-card flex flex-col justify-between border border-primary/5 hover:border-primary/20 transition-colors group shrink-0"
+                  className="w-[400px] sm:w-[450px] md:w-[450px] glass rounded-[2rem] p-4 md:p-8 shadow-card flex flex-col justify-between border border-primary/5 hover:border-primary/20 transition-colors group shrink-0"
                 >
                   <div className="flex items-center gap-1 text-accent mb-6">
                     {[...Array(5)].map((_, i) => (<Star key={i} className="h-3.5 w-3.5 fill-current" />))}
@@ -251,7 +251,7 @@ const Home = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-sm">{t.name}</div>
-                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{t.role}</div>
+                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground leading-tight">{t.role}</div>
                     </div>
                   </div>
                 </div>
@@ -265,7 +265,7 @@ const Home = () => {
               {[...testimonials.slice().reverse(), ...testimonials.slice().reverse()].map((t, i) => (
                 <div
                   key={i}
-                  className="w-[350px] md:w-[450px] glass rounded-[2rem] p-8 shadow-card flex flex-col justify-between border border-primary/5 hover:border-primary/20 transition-colors group shrink-0"
+                  className="w-[290px] sm:w-[350px] md:w-[450px] glass rounded-[2rem] p-6 md:p-8 shadow-card flex flex-col justify-between border border-primary/5 hover:border-primary/20 transition-colors group shrink-0"
                 >
                   <div className="flex items-center gap-1 text-accent mb-6">
                     {[...Array(5)].map((_, i) => (<Star key={i} className="h-3.5 w-3.5 fill-current" />))}
@@ -279,7 +279,7 @@ const Home = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-sm">{t.name}</div>
-                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{t.role}</div>
+                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground leading-tight">{t.role}</div>
                     </div>
                   </div>
                 </div>
